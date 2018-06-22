@@ -3,7 +3,7 @@ import './Nav.css';
 import ScoreBox from '../ScoreBox';
 
 
-const Nav = () => {
+const Nav = props => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -14,7 +14,7 @@ const Nav = () => {
                 </span>
             </div>
             <div className="col justify-content-end text-right">
-                <ScoreBox />
+                <ScoreBox score={props.score} topScore={props.topScore}/>
             </div>
         </nav>
     )

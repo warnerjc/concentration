@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Nav from '../../components/Nav';
+import Header from '../../components/Header';
 import { Col, Row, Container } from '../../components/Grid';
 import Image from '../../components/Image';
 import images from '../../images.json';
@@ -109,6 +111,11 @@ class Concentration extends Component {
     render() {
         return (
             <React.Fragment>
+                <Nav
+                    score={this.state.score}
+                    topScore={this.state.topScore}
+                />
+                <Header />
                 <Container>
                     <Row>
                         {                           
