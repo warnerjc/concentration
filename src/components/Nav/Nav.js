@@ -9,7 +9,7 @@ const Nav = props => {
             <a className="navbar-brand col" href="/">concentration</a>
             <div className="col justify-content-center text-center">
                 <span className="navbar-text">
-                    <img src={require('./brain-cog-50.png')} alt='Thinking Brain' />
+                    <img src='./assets/images/brain-cog-50.png' alt='Thinking Brain' />
                 </span>
             </div>
             <div className="col justify-content-end text-right">
