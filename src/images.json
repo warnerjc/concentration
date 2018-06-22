@@ -1,0 +1,86 @@
+[
+    {
+        "id": 0,
+        "altTitle": "blue",
+        "imageSrc": "",
+        "imageColor": "blue",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 1,
+        "altTitle": "green",
+        "imageSrc": "",
+        "imageColor": "green",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 2,
+        "altTitle": "yellow",
+        "imageSrc": "",
+        "imageColor": "yellow",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 3,
+        "altTitle": "red",
+        "imageSrc": "",
+        "imageColor": "red",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 4,
+        "altTitle": "orange",
+        "imageSrc": "",
+        "imageColor": "orange",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 5,
+        "altTitle": "purple",
+        "imageSrc": "",
+        "imageColor": "purple",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 6,
+        "altTitle": "pink",
+        "imageSrc": "",
+        "imageColor": "pink",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 7,
+        "altTitle": "grey",
+        "imageSrc": "",
+        "imageColor": "grey",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 8,
+        "altTitle": "black",
+        "imageSrc": "",
+        "imageColor": "black",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 9,
+        "altTitle": "navy",
+        "imageSrc": "",
+        "imageColor": "navy",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 10,
+        "altTitle": "teal",
+        "imageSrc": "",
+        "imageColor": "teal",
+        "hasBeenClicked": false
+    },
+    {
+        "id": 11,
+        "altTitle": "coral",
+        "imageSrc": "",
+        "imageColor": "coral",
+        "hasBeenClicked": false
+    }
+  ]
