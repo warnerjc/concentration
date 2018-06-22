@@ -1,9 +1,7 @@
 import React from 'react';
 import './Image.css';
 
-const Image = props => {
-
-    
+const Image = props => {    
 
     return (
         <div 

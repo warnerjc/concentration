@@ -2,9 +2,7 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => {
-
-
-
+    
     return (
         <React.Fragment>
             <header className='container text-center lead header-css'>

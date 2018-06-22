@@ -5,8 +5,6 @@ import { Col, Row, Container } from '../../components/Grid';
 import Image from '../../components/Image';
 import images from '../../images.json';
 
-console.log(images);
-
 class Concentration extends Component {
 
     state = {
@@ -20,18 +18,15 @@ class Concentration extends Component {
     // update state of score and topScore
     resetGame = () => {
 
-        console.log('we are now resetting the game');
-
         images.map( image => {
             
             return (
-                image.hasBeenClicked = false,
-                console.log(`image has been reset: ${image.hasBeenClicked}`)
+                image.hasBeenClicked = false
             );
 
         });
 
-        if (this.state.score > this.state.topScore) {
+        if (this.state.topScore < this.state.score) {
             this.setState({
                 topScore: this.state.score,
                 score: 0
@@ -44,10 +39,10 @@ class Concentration extends Component {
         
     };
 
+    // Let's shuffle the images array after every click
     shuffleImages = () => {
 
-        console.log('randomizing image locations');
-
+        // Temporary array that will be shuffled
         let tempArray = images;
 
         // Randomize tempArray, using Durstenfeld shuffle algorithm
@@ -58,24 +53,21 @@ class Concentration extends Component {
             tempArray[j] = temp;
         }
 
+        // Set images to the shuffled array
         this.setState({
             images: tempArray
-        });
-        
+        });        
 
     };
 
+    // Let's handle the click of an image
     handleClick = event => {
 
         // get clicked image id
         const { id } = event.target;
-        console.log('-------');
-        console.log(`image ${id} clicked`);
-        console.log('-------');
 
-        const currImageArray = images;
-
-        currImageArray.map( image => {
+        // map over the image array to check clicked image
+        images.map( image => {
 
             // find matching image id
             if( parseFloat(image.id) === parseFloat(id) ) {
@@ -94,7 +86,6 @@ class Concentration extends Component {
                     
                     alert('Game over! This image has already been clicked.');
 
-                    console.log('lets reset the game');
                     this.resetGame();
 
                 }
@@ -102,9 +93,16 @@ class Concentration extends Component {
         
         });
 
+        // shuffle images after checking if hasBeenClicked
         this.shuffleImages();
-
-
+        
+        // delay testing win status
+        setTimeout( () => {
+            if (this.state.score === 12 ) {
+                alert('You won! You clicked all the images!');
+                this.resetGame();
+            }
+        }, 50);
 
     }
 
