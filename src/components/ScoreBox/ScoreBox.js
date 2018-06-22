@@ -5,8 +5,8 @@ const ScoreBox = props => {
     return (
         <React.Fragment>
             <div className='row justify-content-end'>
-                <div className='col-3'>Score: {props.score} </div>
-                <div className='col-3'>Top Score: {props.topScore}</div>
+                <div className='col'>Score: {props.score} </div>
+                <div className='col'>Top Score: {props.topScore}</div>
             </div>
         </React.Fragment>
     )

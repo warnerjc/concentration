@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <React.Fragment>
-            <header className='container text-center lead'>
+            <header className='container text-center lead header-css'>
                 <p className='lead'>
                     Get ready to concentrate!
                 </p>

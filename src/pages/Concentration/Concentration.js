@@ -118,11 +118,11 @@ class Concentration extends Component {
                 <Header />
                 <Container>
                     <Row>
-                        {                           
+                        {                       
                             images.map( image => {
                                 return (                                   
                                     <Col 
-                                        size='3'
+                                        size='12 sm-2 md-3'
                                         children={
                                             <Image
                                                 id={image.id}
