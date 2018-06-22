@@ -6,7 +6,13 @@ const Image = props => {
     
 
     return (
-        <div className='game-image' src='' alt={props.altTitle} data-id={props.id} data-clicked={props.hasBeenClicked} style={{backgroundColor: props.imageColor}} />
+        <div 
+            className='game-image'
+            src='' alt={props.altTitle}
+            id={props.id}
+            style={{backgroundColor: props.imageColor}}
+            onClick={props.onClick}
+        />
     )
 }
 

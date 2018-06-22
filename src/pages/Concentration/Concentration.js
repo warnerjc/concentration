@@ -8,8 +8,7 @@ console.log(images);
 class Concentration extends Component {
 
     state = {
-        currentClickedID: null,
-        hasBeenClicked: false,
+        images: images,
         score: 0,
         topScore: 0
     }
@@ -19,8 +18,15 @@ class Concentration extends Component {
     // update state of score and topScore
     resetGame = () => {
 
+        console.log('we are now resetting the game');
+
         images.map( image => {
-            return (image.hasBeenClicked = 'false');
+            
+            return (
+                image.hasBeenClicked = false,
+                console.log(`image has been reset: ${image.hasBeenClicked}`)
+            );
+
         });
 
         if (this.state.score > this.state.topScore) {
@@ -30,12 +36,75 @@ class Concentration extends Component {
             })
         } else {
             this.setState( {
-                socre: 0
+                score: 0
             })
         }
         
     };
 
+    shuffleImages = () => {
+
+        console.log('randomizing image locations');
+
+        let tempArray = images;
+
+        // Randomize tempArray, using Durstenfeld shuffle algorithm
+        for (let i = tempArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = tempArray[i];
+            tempArray[i] = tempArray[j];
+            tempArray[j] = temp;
+        }
+
+        this.setState({
+            images: tempArray
+        });
+        
+
+    };
+
+    handleClick = event => {
+
+        // get clicked image id
+        const { id } = event.target;
+        console.log('-------');
+        console.log(`image ${id} clicked`);
+        console.log('-------');
+
+        const currImageArray = images;
+
+        currImageArray.map( image => {
+
+            // find matching image id
+            if( parseFloat(image.id) === parseFloat(id) ) {
+                // check if hasBeenClicked
+                // if not, increase score, continue game
+                if ( !image.hasBeenClicked ) {
+                    
+                    image.hasBeenClicked = true;
+                    
+                    this.setState({
+                        score: this.state.score + 1
+                    });
+
+                // if so, alert user game over, then reset game
+                } else {
+                    
+                    alert('Game over! This image has already been clicked.');
+
+                    console.log('lets reset the game');
+                    this.resetGame();
+
+                }
+            }     
+        
+        });
+
+        this.shuffleImages();
+
+
+
+    }
 
     render() {
         return (
@@ -44,7 +113,6 @@ class Concentration extends Component {
                     <Row>
                         {                           
                             images.map( image => {
-                                console.log('im here');
                                 return (                                   
                                     <Col 
                                         size='3'
@@ -54,7 +122,7 @@ class Concentration extends Component {
                                                 altTitle={image.altTitle}
                                                 imageSrc={image.imageSrc}
                                                 imageColor={image.imageColor}
-                                                hasBeenClicked={image.hasBeenClicked}
+                                                onClick={this.handleClick}
                                             />
                                         }
                                     >                                        
